@@ -1,6 +1,12 @@
 <div class="nav-container" [ngClass]="{ 'active': overlay }">
     <div class="nav-bar active" (click)="toggleOverlay()" [ngClass]="{ 'active': overlay }">
         <ul>
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a routerLink="/main">Home</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a routerLink="/breathe">Breathe</a>
+          </li>
           <li class="nav-item" routerLinkActive="active">
             <a routerLink="/main/meditate">Meditate</a>
           </li>
