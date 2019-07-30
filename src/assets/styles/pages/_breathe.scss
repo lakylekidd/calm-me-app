@@ -5,15 +5,44 @@ app-breate {
     height: 100vh;
     justify-content: center;
     flex-direction: column;
-
-    h1 {
-        color: white;
-    }
+    color: white;
       
       .watch-face {
+        margin: 90px 0;
         height: 125px;
         width: 125px;
-        animation: pulse 4s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
+
+        &.begin {
+          animation: tinypulse 1.5s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
+        }
+
+        &.run {
+          animation: pulse 4s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
+          .circle {
+            animation: center 6s infinite;
+          }
+          .circle:nth-child(1){
+            animation: circle-1 4s ease alternate infinite;
+          }
+          .circle:nth-child(2) {
+            animation: circle-2 4s ease alternate infinite;
+          }
+          .circle:nth-child(3) {
+            animation: circle-3 4s ease alternate infinite;
+          }
+          
+          .circle:nth-child(4) {
+            animation: circle-4 4s ease alternate infinite;
+          }
+          
+          .circle:nth-child(5) {
+            animation: circle-5 4s ease alternate infinite;
+          }
+          
+          .circle:nth-child(6) {
+            animation: circle-6 4s ease alternate infinite;
+          }
+        }
       }
       
       .circle {
@@ -22,8 +51,7 @@ app-breate {
         border-radius: 50%;
         position: absolute;
         mix-blend-mode: screen;
-        transform: translate(0, 0);
-        animation: center 6s infinite;
+        transform: translate(0, 0);        
       }
       
       .circle:nth-child(odd) {
@@ -34,36 +62,21 @@ app-breate {
         background: #529ca0;
       }
       
-      .circle:nth-child(1) {
-        animation: circle-1 4s ease alternate infinite;
-      }
-      
-      .circle:nth-child(2) {
-        animation: circle-2 4s ease alternate infinite;
-      }
-      
-      .circle:nth-child(3) {
-        animation: circle-3 4s ease alternate infinite;
-      }
-      
-      .circle:nth-child(4) {
-        animation: circle-4 4s ease alternate infinite;
-      }
-      
-      .circle:nth-child(5) {
-        animation: circle-5 4s ease alternate infinite;
-      }
-      
-      .circle:nth-child(6) {
-        animation: circle-6 4s ease alternate infinite;
-      }
-      
       @keyframes pulse {
         0% {
           transform: scale(.15) rotate(180deg);
         }
         100% {
           transform: scale(1);
+        }
+      }
+
+      @keyframes tinypulse {
+        0% {
+          transform: scale(.15) rotate(180deg);
+        }
+        100% {
+          transform: scale(.3);
         }
       }
       

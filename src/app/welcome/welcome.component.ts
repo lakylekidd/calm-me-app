@@ -14,6 +14,6 @@ export class WelcomeComponent implements OnInit {
   }
 
   goToBreatheApp = () => {
-    this.router.navigate(['/breathe'])
+    this.router.navigate(['/breathe']);
   }
 }

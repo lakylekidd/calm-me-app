@@ -1,6 +1,8 @@
 <h1>Watch the center</h1>
 
-<div class="watch-face">
+<p>{{msg}}</p>
+
+<div class="watch-face" [ngClass]="running ? 'run' : 'begin'">
   <div class="circle"></div>
   <div class="circle"></div>
   <div class="circle"></div>
