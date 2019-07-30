@@ -4,10 +4,12 @@ import { AuthComponent } from "./auth/auth.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { RouterModule } from "@angular/router";
+import { LayoutModule } from "app/layout/layout.module";
 
 @NgModule({
 	imports: [
 		CommonModule,
+		LayoutModule,
 		RouterModule.forChild([
 			{
 				path: "",

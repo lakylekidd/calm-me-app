@@ -1,219 +1,208 @@
 div.header-container {
-    $header-height: 90px;
-    padding: 0 $page-margin-lr;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 18px;
+	$header-height: 90px;
+	padding: 0 $page-margin-lr;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 18px;
 
-    &.invert::before {
-        content: "";
-        z-index: -100;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 139px;
-        background-repeat: no-repeat;
-        background-size: auto;
-        background: url(/assets/images/Rectangle.svg);
-    }
+	&.invert::before {
+		content: "";
+		z-index: -100;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 139px;
+		background-repeat: no-repeat;
+		background-size: auto;
+		background: url(/assets/images/Rectangle.svg);
+	}
 
-    div.logo {
-        height: $header-height;
-        width: 180px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; 
-        &.dark {
-            background-image: url(/assets/images/logo.png);
-        }
-        &.light {
-            background-image: url(/assets/images/logo_trans.png);
-        }
-    }
+	div.nav-container {
+		display: flex;
+		justify-content: center;
+		height: 40px;
 
-    div.nav-container {
-        display: flex;
-        justify-content: center;
-        height: 40px;
+		div.hamburger {
+			display: none;
+			width: 46px;
+			height: 100%;
+			position: relative;
+			margin: 0;
+			transform: rotate(0deg);
+			transition: .5s ease-in-out;
+			cursor: pointer;
 
-        div.hamburger {   
-            display:none;         
-            width: 46px;
-            height: 100%;
-            position: relative;
-            margin: 0;
-            transform: rotate(0deg);
-            transition: .5s ease-in-out;
-            cursor: pointer;
-    
-            @include mobile {
-                display: block;
-                float: right;
-                margin: 5px 10px;
-            }
-    
-            span {
-                display: block;
-                position: absolute;
-                height: 5px;
-                width: 100%;
-                background: white;
-                border-radius: 5px;
-                opacity: 1;
-                left: 0;
-                transform: rotate(0deg);
-                transition: .25s ease-in-out;
-    
-                &:nth-child(1) {
-                    top: 5px;
-                }
-                &:nth-child(2),
-                &:nth-child(3) {
-                    top: 18px;
-                }
-                &:nth-child(4) {
-                    top: 31px;
-                }
-            }
-            &.open span {
-                &:nth-child(1) {
-                    top: 18px;
-                    width: 0%;
-                    left: 50%;
-                }
-                &:nth-child(2) {
-                    transform: rotate(45deg);
-                }
-                &:nth-child(3) {
-                    transform: rotate(-45deg);
-                }
-                &:nth-child(4) {
-                    top: 18px;
-                    width: 0%;
-                    left: 50%;
-                }
-            }
-        }
+			@include mobile {
+				display: block;
+				float: right;
+				margin: 5px 10px;
+			}
 
-        div.nav-bar {
-            @include mobile {
-                overflow: hidden;
-            }
-            ul {
-                height: 100%; 
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                list-style-type: none;
-                margin: 0;
+			span {
+				display: block;
+				position: absolute;
+				height: 5px;
+				width: 100%;
+				background: white;
+				border-radius: 5px;
+				opacity: 1;
+				left: 0;
+				transform: rotate(0deg);
+				transition: .25s ease-in-out;
 
-                @include mobile {
-                    opacity: .5;
-                    position: fixed;
-                    top:-1000px;
-                }
-        
-                li {
-                    height: 100%;
-                    margin: auto 15px;
-        
-                    &.active > a:before {
-                        content: "";
-                        position: absolute;
-                        width: 100%;
-                        height: 3px;
-                        bottom: 0;
-                        left: 0;
-                        background-color: $light-color;
-                        visibility: visible;
-                        transform: scaleX(1);
-                    }
-        
-                    a {
-                        color: white;
-                        text-decoration: none;
-                        position: relative;
-                        box-sizing: border-box;
-                        display: flex;
-                        height: 100%;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                    a:before {
-                        content: "";
-                        position: absolute;
-                        width: 100%;
-                        height: 3px;
-                        bottom: 0;
-                        left: 0;
-                        background-color: $light-color;
-                        visibility: hidden;
-                        transform: scaleX(0);
-                        transition: all 0.3s ease-in-out 0s;
-                    }
-                    a:hover:before {
-                        visibility: visible;
-                        transform: scaleX(1);
-                    }
-                    a:active:before {
-                        visibility: visible;
-                        transform: scaleX(1.2);
-                    }
-                }
-            }
-        }
+				&:nth-child(1) {
+					top: 5px;
+				}
+				&:nth-child(2),
+				&:nth-child(3) {
+					top: 18px;
+				}
+				&:nth-child(4) {
+					top: 31px;
+				}
+			}
+			&.open span {
+				&:nth-child(1) {
+					top: 18px;
+					width: 0%;
+					left: 50%;
+				}
+				&:nth-child(2) {
+					transform: rotate(45deg);
+				}
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+				}
+				&:nth-child(4) {
+					top: 18px;
+					width: 0%;
+					left: 50%;
+				}
+			}
+		}
 
-        // When the user is on mobile and has clicked on the hamburger menu
-        &.active {
-            @include mobile {  
-                div.hamburger {
-                    z-index: 200;
-                }              
-                div.nav-bar {
-                    overflow: hidden;
-                    position: relative;
-                    opacity: 0;
-                    background-color: rgba(0, 0, 0, 0.753);
-                    transition: all 0.2s ease-in-out;
+		div.nav-bar {
+			@include mobile {
+				overflow: hidden;
+			}
+			ul {
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				list-style-type: none;
+				margin: 0;
 
-                    &.active {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        opacity: 1;
-                        position: fixed; /* Sit on top of the page content */
-                        width: 100vw; /* Full width (cover the whole page) */
-                        height: 100vh; /* Full height (cover the whole page) */
-                        top: 0; 
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        background-color: rgba(0, 0, 0, 0.616); /* Black background with opacity */
-                        z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-                        cursor: pointer; /* Add a pointer on hover */
-                    }
+				@include mobile {
+					opacity: .5;
+					position: fixed;
+					top: -1000px;
+				}
 
-                    ul {
-                        opacity: 1;
-                        height: auto;
-                        position: relative;
-                        right: unset;
-                        top: unset;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: flex-start;
+				li {
+					height: 100%;
+					margin: auto 15px;
 
-                        li {
-                            height: 40px;
-                            margin: 20px 0;
-                        }
-                    }
-                }
-            }
-        }
+					&.active > a:before {
+						content: "";
+						position: absolute;
+						width: 100%;
+						height: 3px;
+						bottom: 0;
+						left: 0;
+						background-color: $light-color;
+						visibility: visible;
+						transform: scaleX(1);
+					}
 
-        
-    }
+					a {
+						color: white;
+						text-decoration: none;
+						position: relative;
+						box-sizing: border-box;
+						display: flex;
+						height: 100%;
+						justify-content: center;
+						align-items: center;
+					}
+					a:before {
+						content: "";
+						position: absolute;
+						width: 100%;
+						height: 3px;
+						bottom: 0;
+						left: 0;
+						background-color: $light-color;
+						visibility: hidden;
+						transform: scaleX(0);
+						transition: all 0.3s ease-in-out 0s;
+					}
+					a:hover:before {
+						visibility: visible;
+						transform: scaleX(1);
+					}
+					a:active:before {
+						visibility: visible;
+						transform: scaleX(1.2);
+					}
+				}
+			}
+		}
+
+		// When the user is on mobile and has clicked on the hamburger menu
+		&.active {
+			@include mobile {
+				div.hamburger {
+					z-index: 200;
+				}
+				div.nav-bar {
+					overflow: hidden;
+					position: relative;
+					opacity: 0;
+					background-color: rgba(0, 0, 0, 0.753);
+					transition: all 0.2s ease-in-out;
+
+					&.active {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						opacity: 1;
+						position: fixed; /* Sit on top of the page content */
+						width: 100vw; /* Full width (cover the whole page) */
+						height: 100vh; /* Full height (cover the whole page) */
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						background-color: rgba(
+							0,
+							0,
+							0,
+							0.616
+						); /* Black background with opacity */
+						z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+						cursor: pointer; /* Add a pointer on hover */
+					}
+
+					ul {
+						opacity: 1;
+						height: auto;
+						position: relative;
+						right: unset;
+						top: unset;
+						flex-direction: column;
+						align-items: center;
+						justify-content: flex-start;
+
+						li {
+							height: 40px;
+							margin: 20px 0;
+						}
+					}
+				}
+			}
+		}
+	}
 }

@@ -10,8 +10,8 @@ div.auth-wrapper {
 		max-width: 350px;
 		color: white;
 		background-image: linear-gradient(
-				rgba($light-color, 0.45),
-				rgba($light-color, 0.45)
+				rgba($main-color, 0.80),
+				rgba($light-color, 0.70)
 			),
 			url('/assets/images/auth_bg_02.png');
 		/* Background image is centered vertically and horizontally at all times */
@@ -30,6 +30,7 @@ div.auth-wrapper {
 
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		text-align: center;
 
 		h1 {
