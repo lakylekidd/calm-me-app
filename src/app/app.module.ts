@@ -13,6 +13,7 @@ import { TipsModule } from './tips/tips.module';
 import { MainComponent } from './main/main.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AuthService } from './services/auth.service';
+import { AughComponent } from './augh/augh.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AuthService } from './services/auth.service';
     MeditateComponent,
     ExercisesComponent,
     MainComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AughComponent
   ],
   imports: [
     BrowserModule,

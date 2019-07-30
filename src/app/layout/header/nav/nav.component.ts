@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "app/services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
 	selector: "app-nav",
@@ -9,14 +9,18 @@ import { AuthService } from "app/services/auth.service";
 export class NavComponent implements OnInit {
 	overlay: boolean = false;
 
-	constructor(private readonly authService: AuthService) {}
+	constructor(private readonly router: Router) {}
 
 	toggleOverlay() {
 		this.overlay = !this.overlay;
 	}
 
 	handleLoginClick = () => {
-		this.authService.login("", "");
+		this.router.navigate([ "/auth/login" ]);
+	};
+
+	handleRegisterClick = () => {
+		this.router.navigate([ "/auth/register" ]);
 	};
 
 	ngOnInit() {}

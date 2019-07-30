@@ -24,8 +24,8 @@ export class AuthService extends BaseService {
 	login = (email: string, password: string) => {
 		return this.http
 			.post(`${this.apiBaseUrl}/auth`, {
-				email: "williamcaminiti@live.com",
-				password: "hermes"
+				email,
+				password
 			})
 			.toPromise()
 			.then((res) => {
