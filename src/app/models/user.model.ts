@@ -4,3 +4,8 @@ export interface IUser {
 	lastName: string;
 	email: string;
 }
+
+export interface ILoginModel {
+	email: string;
+	password: string;
+}

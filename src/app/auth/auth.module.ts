@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+
 import { AuthComponent } from "./auth/auth.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
@@ -10,6 +12,7 @@ import { LayoutModule } from "app/layout/layout.module";
 	imports: [
 		CommonModule,
 		LayoutModule,
+		FormsModule,
 		RouterModule.forChild([
 			{
 				path: "",

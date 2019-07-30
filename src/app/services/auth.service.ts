@@ -1,65 +1,51 @@
 import { Injectable } from "@angular/core";
 import { BaseService } from "./base.service";
-import { IUser } from "app/models/user.model";
+import { IUser, ILoginModel } from "app/models/user.model";
 import { Observable, BehaviorSubject } from "rxjs";
 import { Http } from "@angular/http";
 import { map } from "rxjs/operator/map";
+import { decode, JwtPayload } from "app/auth/helpers/jwt";
 
 const USER_DATA_ID = "USER_DATA";
 
 @Injectable()
 export class AuthService extends BaseService {
-	private currentUserSubject: BehaviorSubject<IUser>;
-	public currentUser: Observable<IUser>;
+	private currentUserSubject: BehaviorSubject<JwtPayload>;
+	public currentUser: Observable<JwtPayload>;
+
+	public get currentUserValue(): JwtPayload {
+		return this.currentUserSubject.value;
+	}
 
 	constructor(private readonly http: Http) {
 		super();
 
-		this.currentUserSubject = new BehaviorSubject<IUser>(
+		this.currentUserSubject = new BehaviorSubject<JwtPayload>(
 			this.getUserData()
 		);
 		this.currentUser = this.currentUserSubject.asObservable();
 	}
 
-	login = (email: string, password: string) => {
+	login = (loginData: ILoginModel) => {
 		return this.http
-			.post(`${this.apiBaseUrl}/auth`, {
-				email,
-				password
-			})
+			.post(`${this.apiBaseUrl}/auth`, loginData)
 			.toPromise()
 			.then((res) => {
 				// Check if we got a response
 				if (res.status === 200) {
 					// Get the JWK
-					//const jwk = res.json().jwk;
-					console.log(res);
+					const jwk = res.text();
+					// Process it
+					const result = decode(jwk);
+					this.saveUserData(result);
+					this.saveToLocal("TOKEN", jwk);
+					this.currentUserSubject.next(result);
+					return true;
 				}
 			})
 			.catch((err) => {
 				console.log("Error: ", err);
 			});
-
-		// return this.http
-		// 	.post<any>(`${this.apiBaseUrl}/users/authenticate`, {
-		// 		username: email,
-		// 		password
-		// 	})
-		// 	.pipe(
-		// 		map((user) => {
-		// 			// login successful if there's a jwt token in the response
-		// 			if (user && user.token) {
-		// 				// store user details and jwt token in local storage to keep user logged in between page refreshes
-		// 				localStorage.setItem(
-		// 					"currentUser",
-		// 					JSON.stringify(user)
-		// 				);
-		// 				this.currentUserSubject.next(user);
-		// 			}
-
-		// 			return user;
-		// 		})
-		// 	);
 	};
 
 	logout() {
@@ -83,7 +69,7 @@ export class AuthService extends BaseService {
 	/**
 	 * Gets the user data from local storage
 	 */
-	private getUserData = (): IUser => {
-		return JSON.parse(this.getFromLocal(USER_DATA_ID));
+	private getUserData = (): JwtPayload => {
+		return JSON.parse(this.getFromLocal(USER_DATA_ID)) as JwtPayload;
 	};
 }
