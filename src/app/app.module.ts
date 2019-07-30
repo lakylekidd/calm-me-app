@@ -12,6 +12,7 @@ import { ExercisesComponent } from './exercises/exercises.component';
 import { TipsModule } from './tips/tips.module';
 import { MainComponent } from './main/main.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
     BreateModule,
     TipsModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

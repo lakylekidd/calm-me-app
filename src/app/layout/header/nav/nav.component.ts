@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { AuthService } from "app/services/auth.service";
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styles: []
+	selector: "app-nav",
+	templateUrl: "./nav.component.html",
+	styles: []
 })
 export class NavComponent implements OnInit {
+	overlay: boolean = false;
 
-    overlay: boolean = false;
+	constructor(private readonly authService: AuthService) {}
 
-    constructor() { }
-    
-    toggleOverlay() {
-      this.overlay = !this.overlay;
-    }
+	toggleOverlay() {
+		this.overlay = !this.overlay;
+	}
 
-    ngOnInit() {
-    }
+	handleLoginClick = () => {
+		this.authService.login("", "");
+	};
 
+	ngOnInit() {}
 }
