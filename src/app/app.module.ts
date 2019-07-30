@@ -10,12 +10,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { MeditateComponent } from './meditate/meditate.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { TipsModule } from './tips/tips.module';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeditateComponent,
-    ExercisesComponent
+    ExercisesComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

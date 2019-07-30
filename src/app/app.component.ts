@@ -7,19 +7,5 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isMainPage: boolean = false;
-
-  constructor(private readonly router: Router) {
-    this.subscribeRouteChange();
-  }
-
-  subscribeRouteChange() {
-    this.router.events.subscribe((val) => {
-      if (this.router.url === "/") {
-        this.isMainPage = true;
-      } else {
-        this.isMainPage = false;
-      }
-    })
-  }
+  
 }
