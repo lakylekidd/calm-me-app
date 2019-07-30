@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { BreateModule } from './breate/breate.module';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { BreateModule } from './breate/breate.module';
     BrowserModule,
     FormsModule,
     HttpModule,
+    LayoutModule,
     BreateModule
   ],
   providers: [],
