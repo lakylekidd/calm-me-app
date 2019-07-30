@@ -4,12 +4,33 @@ div.auth-wrapper {
 	align-items: center;
 	height: 100vh;
 
-	div.register-wrapper {
+	div.auth-inner-wrapper {
 		padding: 10px 20px;
-		background-color: $light-color;
 		border-radius: 10px;
 		max-width: 350px;
-		color: $main-color;
+		color: white;
+		background-image: linear-gradient(
+				rgba($light-color, 0.45),
+				rgba($light-color, 0.45)
+			),
+			url('/assets/images/auth_bg_02.png');
+		/* Background image is centered vertically and horizontally at all times */
+		background-position: center center;
+		/* Background image doesn't tile */
+		background-repeat: no-repeat;
+		/* Background image is fixed in the viewport so that it doesn't move when 
+        the content's height is greater than the image's height */
+		background-attachment: fixed;
+		/* This is what makes the background image rescale based
+        on the container's size */
+		background-size: cover;
+		/* Set a background color that will be displayed
+        while the background image is loading */
+		// background-color: $light-color;
+
+		display: flex;
+		flex-direction: column;
+		text-align: center;
 
 		h1 {
 			font-size: 19px;
