@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-    overlay: boolean = true;
+    overlay: boolean = false;
 
     constructor() { }
     

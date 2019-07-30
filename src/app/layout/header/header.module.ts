@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header.component';
 import { LogoComponent } from './logo/logo.component';
-import { NavComponent } from '../nav/nav.component';
+import { NavComponent } from './nav/nav.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { NavComponent } from '../nav/nav.component';
   declarations: [
     HeaderComponent,
     LogoComponent,
-    NavComponent
+    NavComponent,
+    UserInfoComponent
   ],
   exports: [ 
     HeaderComponent,
