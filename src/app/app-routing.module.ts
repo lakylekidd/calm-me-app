@@ -11,6 +11,7 @@ const routes: Routes = [
     children: [
       { path: 'meditate', component: MeditateComponent },
       { path: 'exercises', component: ExercisesComponent },
+      { path: 'tips', loadChildren: './tips/tips.module#TipsModule'}
     ]
   },
   { path: 'breathe', loadChildren: './breate/breate.module#BreateModule'}
