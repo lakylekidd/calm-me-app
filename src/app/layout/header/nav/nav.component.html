@@ -16,10 +16,10 @@
           <li class="nav-item" routerLinkActive="active">
             <a routerLink="/main/tips" routerLinkActive="active">Mindfulness Tips</a>
           </li>
-          <li class="button">
+          <li class="button" *ngIf="!authenticated">
               <button (click)="handleRegisterClick()">Register</button>
           </li>
-          <li class="button">
+          <li class="button" *ngIf="!authenticated">
             <button (click)="handleLoginClick()">Login</button>
           </li>
         </ul>

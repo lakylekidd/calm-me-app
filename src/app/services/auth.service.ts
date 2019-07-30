@@ -58,7 +58,7 @@ export class AuthService extends BaseService {
 	 * Saves the user data in the local storage
 	 */
 	private saveUserData = (userData) => {
-		this.saveToLocal(USER_DATA_ID, userData);
+		this.saveToLocal(USER_DATA_ID, JSON.stringify(userData));
 	};
 	/**
 	 * Removes the user data from local storage
@@ -70,6 +70,7 @@ export class AuthService extends BaseService {
 	 * Gets the user data from local storage
 	 */
 	private getUserData = (): JwtPayload => {
-		return JSON.parse(this.getFromLocal(USER_DATA_ID)) as JwtPayload;
+		const data = this.getFromLocal(USER_DATA_ID);
+		return JSON.parse(data);
 	};
 }
