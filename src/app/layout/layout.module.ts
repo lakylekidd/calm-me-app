@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderModule } from './header/header.module';
 import { ContentComponent } from './content/content.component';
-import { LogoComponent } from './logo/logo.component';
 
 @NgModule({
   imports: [
@@ -11,12 +10,10 @@ import { LogoComponent } from './logo/logo.component';
   ],
   exports: [
     HeaderModule,
-    ContentComponent,
-    LogoComponent
+    ContentComponent
   ],
   declarations: [
-    ContentComponent,
-    LogoComponent
+    ContentComponent
   ]
 })
 export class LayoutModule { }

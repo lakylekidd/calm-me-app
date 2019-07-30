@@ -1,0 +1,15 @@
+<div class="nav-container" [ngClass]="{ 'active': overlay }">
+    <div class="nav-bar active" [ngClass]="{ 'active': overlay }">
+        <ul>
+          <li class="nav-item active"><a class="active" href="#">Meditate</a></li>
+          <li class="nav-item"><a href="#">Exercises</a></li>
+          <li class="nav-item"><a href="#">Mindfulness Tips</a></li>
+        </ul>
+    </div>
+    <div id="hamburger" class="hamburger" (click)="toggleOverlay()" [ngClass]="{ 'open': overlay }">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
