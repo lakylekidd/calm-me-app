@@ -1,5 +1,6 @@
 <div class="tip-container">
-    <app-tip-item [tip]="tip"></app-tip-item>
+
+    <app-tip-item [tip]="tip" (refresh)="loadNextTip()"></app-tip-item>
 
     <div class="instructions">
         <h2>How do you apply these Mindfulness tips?</h2>    

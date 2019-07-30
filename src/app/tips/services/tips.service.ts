@@ -8,7 +8,7 @@ export interface ITipItem {
 
 const tips: ITipItem[] = [
   { id: 1, title: "Do one thing at a time.", content: "Stop multi-tasking. Focus on one thing. Take it easy and do it well."},
-  { id: 2, title: "Do things slowly and with attention.", content: ""},
+  { id: 2, title: "Do things slowly and with attention.", content: "Be fully attentive to the things you do and do them with attention."},
   { id: 3, title: "Do less.", content: "We want to do everything that other people do. This is not necessary. Do less and only the things that make you feel good."},
   { id: 4, title: "Don't do things right after each other.", content: "Take a short break between two different activities. This way you can put one task away from you and recharge for a new one."},
   { id: 5, title: "Do nothing at least fifteen minutes a day.", content: "No smartphone, no TV, no book. Just do nothing at all and enjoy the moment."},
@@ -37,9 +37,12 @@ export class TipsService {
 
   constructor() { }
 
-  getRandomTip = (): ITipItem => {
-    const index = this.rndNbr() - 1;
-    return tips[index];
+  getRandomTip = (): Promise<ITipItem> => {
+
+    return new Promise<ITipItem>(resolve => setTimeout(() => {
+      const index = this.rndNbr() - 1;
+      resolve(tips[index]);
+    }, 1000));
   }
 
   private rndNbr = () => {

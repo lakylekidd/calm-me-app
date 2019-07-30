@@ -11,7 +11,13 @@ export class TipsComponent implements OnInit {
   tip: ITipItem;
 
   constructor(private readonly tipService: TipsService) {
-    this.tip = this.tipService.getRandomTip();
+    this.loadNextTip();
+  }
+
+  loadNextTip = () => {
+    this.tipService.getRandomTip().then(res => {
+      this.tip = res;
+    });
   }
 
   ngOnInit() {
