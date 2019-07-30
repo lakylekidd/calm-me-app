@@ -1,0 +1,43 @@
+div.auth-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+
+	div.register-wrapper {
+		padding: 10px 20px;
+		background-color: $light-color;
+		border-radius: 10px;
+		max-width: 350px;
+		color: $main-color;
+
+		h1 {
+			font-size: 19px;
+		}
+		p {
+			font-size: 15px;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			div.form-group {
+				margin: 5px 0;
+				input {
+					box-sizing: border-box;
+					width: 100%;
+					font-size: 15px;
+					height: 40px;
+					border-radius: 5px;
+					padding: 5px;
+					border: 1px transparent;
+				}
+			}
+			div.button-group {
+				display: flex;
+				margin: 10px 0;
+				justify-content: center;
+			}
+		}
+	}
+}
