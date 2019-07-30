@@ -1,5 +1,5 @@
 <div class="nav-container" [ngClass]="{ 'active': overlay }">
-    <div class="nav-bar active" [ngClass]="{ 'active': overlay }">
+    <div class="nav-bar active" (click)="toggleOverlay()" [ngClass]="{ 'active': overlay }">
         <ul>
           <li class="nav-item" routerLinkActive="active">
             <a routerLink="/meditate">Meditate</a>
