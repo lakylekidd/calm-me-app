@@ -1,9 +1,15 @@
 <div class="nav-container" [ngClass]="{ 'active': overlay }">
     <div class="nav-bar active" [ngClass]="{ 'active': overlay }">
         <ul>
-          <li class="nav-item active"><a class="active" href="#">Meditate</a></li>
-          <li class="nav-item"><a href="#">Exercises</a></li>
-          <li class="nav-item"><a href="#">Mindfulness Tips</a></li>
+          <li class="nav-item" routerLinkActive="active">
+            <a routerLink="/meditate">Meditate</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a routerLink="/exercises" routerLinkActive="active">Exercises</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a routerLink="/tips" routerLinkActive="active">Mindfulness Tips</a>
+          </li>
           <li class="button">
               <button>Register</button>
           </li>

@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ExercisesComponent } from './exercises/exercises.component';
+import { MeditateComponent } from './meditate/meditate.component';
 
 const routes: Routes = [
   {
     path: '',
-    children: []
+    children: [
+      { path: 'meditate', component: MeditateComponent },
+      { path: 'exercises', component: ExercisesComponent },
+    ]
   }
 ];
 

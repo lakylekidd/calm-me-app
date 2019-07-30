@@ -7,10 +7,15 @@ import { AppComponent } from './app.component';
 import { BreateModule } from './breate/breate.module';
 import { LayoutModule } from './layout/layout.module';
 import { AppRoutingModule } from './app-routing.module';
+import { MeditateComponent } from './meditate/meditate.component';
+import { ExercisesComponent } from './exercises/exercises.component';
+import { TipsModule } from './tips/tips.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MeditateComponent,
+    ExercisesComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     AppRoutingModule,
     LayoutModule,
-    BreateModule
+    BreateModule,
+    TipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

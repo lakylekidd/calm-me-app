@@ -4,10 +4,12 @@ import { HeaderComponent } from './header.component';
 import { LogoComponent } from './logo/logo.component';
 import { NavComponent } from './nav/nav.component';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   declarations: [
     HeaderComponent,
