@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
-div.app-container {
-    font-family: 'Montserrat', sans-serif;
+div.app-container.main {
     min-height: 100vh;
     background-image: 
     linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('/assets/images/background.jpg');

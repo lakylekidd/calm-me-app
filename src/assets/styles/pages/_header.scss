@@ -1,10 +1,23 @@
 div.header-container {
-
     $header-height: 90px;
     padding: 0 $page-margin-lr;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 18px;
+
+    &.invert::before {
+        content: "";
+        z-index: -100;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 139px;
+        background-repeat: no-repeat;
+        background-size: auto;
+        background: url(/assets/images/Rectangle.svg);
+    }
 
     div.logo {
         height: $header-height;
@@ -12,7 +25,12 @@ div.header-container {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center; 
-        background-image: url(/assets/images/logo.png);
+        &.dark {
+            background-image: url(/assets/images/logo.png);
+        }
+        &.light {
+            background-image: url(/assets/images/logo_trans.png);
+        }
     }
 
     div.nav-container {
