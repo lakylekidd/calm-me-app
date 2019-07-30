@@ -11,13 +11,15 @@ import { MeditateComponent } from './meditate/meditate.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { TipsModule } from './tips/tips.module';
 import { MainComponent } from './main/main.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeditateComponent,
     ExercisesComponent,
-    MainComponent
+    MainComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

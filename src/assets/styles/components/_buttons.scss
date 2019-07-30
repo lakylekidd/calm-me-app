@@ -7,6 +7,17 @@ button {
     color: white;
     font-size: 18px;
     transition: .1s linear;
+
+    &.strong {
+        background-color: $main-color;
+        border-color: $main-color;
+
+        &:hover {
+            background-color: $light-color;
+            color: $main-color;
+            font-weight: bold;
+        }
+    }
 }
 button:hover {
     cursor: pointer;
