@@ -1,0 +1,35 @@
+div.tip-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div.tip-item {
+        border-radius: 20px;
+        background: $light-color;
+        padding: 20px;
+        width: 600px;
+
+        @include mobile {
+            box-sizing: border-box;
+            width: 100vw;
+            border-radius: 0;
+            padding: 20px 60px;
+        }
+
+        h1 {
+            font-size: 19px;
+            color: $main-color;
+        }
+    }
+
+    div.instructions {
+        max-width: 900px;
+        margin-top: 50px;
+
+        @include mobile {
+            box-sizing: border-box;
+            padding: 0 20px;
+            width: 100vw;
+        }
+    }
+}

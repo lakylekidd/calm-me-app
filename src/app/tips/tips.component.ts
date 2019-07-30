@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TipsService, ITipItem } from './services/tips.service';
 
 @Component({
   selector: 'app-tips',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TipsComponent implements OnInit {
 
-  constructor() { }
+  tip: ITipItem;
+
+  constructor(private readonly tipService: TipsService) {
+    this.tip = this.tipService.getRandomTip();
+  }
 
   ngOnInit() {
+    
   }
 
 }
