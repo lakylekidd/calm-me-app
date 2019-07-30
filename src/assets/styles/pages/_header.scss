@@ -16,7 +16,6 @@ div.header-container {
     }
 
     div.nav-container {
-
         display: flex;
         justify-content: center;
         height: 40px;
@@ -81,6 +80,9 @@ div.header-container {
         }
 
         div.nav-bar {
+            @include mobile {
+                overflow: hidden;
+            }
             ul {
                 height: 100%; 
                 display: flex;
@@ -90,7 +92,9 @@ div.header-container {
                 margin: 0;
 
                 @include mobile {
-                    opacity: 0;
+                    opacity: .5;
+                    position: fixed;
+                    top:-1000px;
                 }
         
                 li {
