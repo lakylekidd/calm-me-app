@@ -17,6 +17,10 @@ const routes: Routes = [
 		]
 	},
 	{ path: "breathe", loadChildren: "./breate/breate.module#BreateModule" },
+	{
+		path: "calendar",
+		loadChildren: "./calendar/calendar.module#CalendarModule"
+	},
 	{ path: "auth", loadChildren: "./auth/auth.module#AuthModule" },
 	{ path: "", redirectTo: "main", pathMatch: "full" }
 ];
