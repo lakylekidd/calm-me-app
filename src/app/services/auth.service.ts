@@ -33,17 +33,6 @@ export class AuthService extends BaseService {
 		this.currentUser = this.currentUserSubject.asObservable();
 	}
 
-	// // POST
-	// CreateBug(data): Observable<Bug> {
-	// 	return this.http
-	// 		.post<Bug>(
-	// 			this.baseurl + "/bugtracking/",
-	// 			JSON.stringify(data),
-	// 			this.httpOptions
-	// 		)
-	// 		.pipe(retry(1), catchError(this.errorHandl));
-	// }
-
 	login = (loginData: ILoginModel) => {
 		return this.http
 			.post(`${this.apiBaseUrl}/auth`, JSON.stringify(loginData), {
