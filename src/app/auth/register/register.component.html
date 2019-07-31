@@ -3,19 +3,19 @@
   <p>Enter your information below to create a new user account.</p>
   <form>
     <div class="form-group">
-      <input type="text" name="firstname" required placeholder="Enter your first name" />
+      <input type="text" name="firstname" required [(ngModel)]="form.firstname"  placeholder="Enter your first name" />
     </div>
     <div class="form-group">
-      <input type="text" name="lastname" required placeholder="Enter your last name" />
+      <input type="text" name="lastname" required [(ngModel)]="form.lastname"  placeholder="Enter your last name" />
     </div>
     <div class="form-group">
-      <input type="email" name="email" required placeholder="Enter your email address" />
+      <input type="email" name="email" required [(ngModel)]="form.email"  placeholder="Enter your email address" />
     </div>
     <div class="form-group">
-      <input type="password" name="password" required placeholder="Enter a password" />
+      <input type="password" name="password" [(ngModel)]="form.password" required placeholder="Enter a password" />
     </div>
     <div class="form-group">
-      <input type="password" name="passwordconfirm" required placeholder="Confirm your password" />
+      <input type="password" name="passwordconfirm" required [(ngModel)]="form.passwordconfirm" placeholder="Confirm your password" />
     </div>
     <div class="button-group">
       <button class="strong">Submit</button>

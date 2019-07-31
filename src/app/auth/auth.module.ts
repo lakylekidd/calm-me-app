@@ -8,6 +8,7 @@ import { RegisterComponent } from "./register/register.component";
 import { RouterModule } from "@angular/router";
 import { LayoutModule } from "app/layout/layout.module";
 import { LogoutComponent } from "./logout/logout.component";
+import { RegistrationConfirmedComponent } from "./registration-confirmed/registration-confirmed.component";
 
 @NgModule({
 	imports: [
@@ -21,6 +22,10 @@ import { LogoutComponent } from "./logout/logout.component";
 				children: [
 					{ path: "login", component: LoginComponent },
 					{ path: "register", component: RegisterComponent },
+					{
+						path: "registration-confirmed",
+						component: RegistrationConfirmedComponent
+					},
 					{ path: "logout", component: LogoutComponent },
 					{ path: "", redirectTo: "login", pathMatch: "full" },
 					{ path: "**", redirectTo: "login", pathMatch: "full" }
@@ -32,7 +37,8 @@ import { LogoutComponent } from "./logout/logout.component";
 		AuthComponent,
 		LoginComponent,
 		RegisterComponent,
-		LogoutComponent
+		LogoutComponent,
+		RegistrationConfirmedComponent
 	],
 	exports: [ AuthComponent, LoginComponent, RegisterComponent ]
 })

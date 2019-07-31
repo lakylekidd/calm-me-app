@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BaseService } from "./base.service";
-import { IUser, ILoginModel } from "app/models/user.model";
+import { IUser, ILoginModel, IRegisterModel } from "app/models/user.model";
 import { Observable, BehaviorSubject } from "rxjs";
 import { Http } from "@angular/http";
 import { map } from "rxjs/operator/map";
@@ -42,6 +42,23 @@ export class AuthService extends BaseService {
 					this.currentUserSubject.next(result);
 					return true;
 				}
+				return false;
+			})
+			.catch((err) => {
+				console.log("Error: ", err);
+			});
+	};
+
+	register = (registerData: IRegisterModel) => {
+		return this.http
+			.post(`${this.apiBaseUrl}/users`, registerData)
+			.toPromise()
+			.then((res) => {
+				// Check if we got a response
+				if (res.status === 201) {
+					return true;
+				}
+				return false;
 			})
 			.catch((err) => {
 				console.log("Error: ", err);
