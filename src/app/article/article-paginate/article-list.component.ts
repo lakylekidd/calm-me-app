@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { IArticle } from "app/models/article.model";
 
 @Component({
 	selector: "app-article-list",
@@ -6,5 +7,6 @@ import { Component } from "@angular/core";
 	styleUrls: [ "./article-list.component.scss" ]
 })
 export class ArticleListComponent {
+	@Input() private readonly articles: IArticle[];
 	constructor() {}
 }
