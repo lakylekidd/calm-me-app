@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, NgZone } from "@angular/core";
 import { AuthService } from "app/services/auth.service";
 import { Router } from "@angular/router";
 import { IRegisterModel } from "app/models/user.model";
@@ -20,7 +20,8 @@ export class RegisterComponent implements OnInit {
 
 	constructor(
 		private readonly authService: AuthService,
-		private readonly router: Router
+		private readonly router: Router,
+		private ngZone: NgZone
 	) {}
 
 	// Only for debugging. Will be removed from production
@@ -32,11 +33,15 @@ export class RegisterComponent implements OnInit {
 
 	onSubmit = () => {
 		this.submitted = true;
-		this.authService.register(this.form).then((success) => {
-			if (success) {
-				// Redirect to Main Page
-				this.router.navigate([ "/auth/registration-confirmed" ]);
-			}
+		this.authService.register(this.form).subscribe((res) => {
+			console.log("Log in called", res);
+			this.ngZone.run(() => this.router.navigateByUrl("/issues-list"));
 		});
+		// .then((success) => {
+		// 	if (success) {
+		// 		// Redirect to Main Page
+		// 		this.router.navigate([ "/auth/registration-confirmed" ]);
+		// 	}
+		// });
 	};
 }

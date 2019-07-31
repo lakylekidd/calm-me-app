@@ -13,15 +13,15 @@ const routes: Routes = [
 			{ path: "", component: WelcomeComponent },
 			{ path: "meditate", component: MeditateComponent },
 			{ path: "exercises", component: ExercisesComponent },
-			{ path: "tips", loadChildren: "./tips/tips.module#TipsModule" }
+			{ path: "tips", loadChildren: () => import('./tips/tips.module').then(m => m.TipsModule) }
 		]
 	},
-	{ path: "breathe", loadChildren: "./breate/breate.module#BreateModule" },
+	{ path: "breathe", loadChildren: () => import('./breate/breate.module').then(m => m.BreateModule) },
 	{
 		path: "calendar",
-		loadChildren: "./calendar/calendar.module#CalendarModule"
+		loadChildren: () => import('./calendar/calendar.module').then(m => m.CalendarModule)
 	},
-	{ path: "auth", loadChildren: "./auth/auth.module#AuthModule" },
+	{ path: "auth", loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
 	{ path: "", redirectTo: "main", pathMatch: "full" }
 ];
 

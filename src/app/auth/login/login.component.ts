@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, NgZone } from "@angular/core";
 import { ILoginModel } from "app/models/user.model";
 import { AuthService } from "app/services/auth.service";
 import { Router } from "@angular/router";
@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
 
 	constructor(
 		private readonly authService: AuthService,
-		private readonly router: Router
+		private readonly router: Router,
+		private ngZone: NgZone
 	) {}
 
 	// Only for debugging. Will be removed from production
@@ -26,11 +27,15 @@ export class LoginComponent implements OnInit {
 
 	onSubmit = () => {
 		this.submitted = true;
-		this.authService.login(this.form).then((success) => {
-			if (success) {
-				// Redirect to Main Page
-				this.router.navigate([ "/main" ]);
-			}
+		this.authService.login(this.form).subscribe((res) => {
+			console.log("Log in called", res);
+			this.ngZone.run(() => this.router.navigateByUrl("/issues-list"));
 		});
+		// .then((success) => {
+		// 	if (success) {
+		// 		// Redirect to Main Page
+		// 		this.router.navigate([ "/main" ]);
+		// 	}
+		// });
 	};
 }
