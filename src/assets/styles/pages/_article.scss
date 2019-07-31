@@ -1,0 +1,19 @@
+div.article-wrapper {
+	padding: 15px;
+	background-color: white;
+	div.article-image {
+		width: 100%;
+		img {
+			object-fit: fill;
+			height: 400px;
+		}
+	}
+
+	div.content-wrapper {
+		margin: $page-margin-u;
+
+		@include mobile {
+			margin: $page-margin-u 0;
+		}
+	}
+}

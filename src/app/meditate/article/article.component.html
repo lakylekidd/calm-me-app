@@ -1,5 +1,7 @@
-<div class="article-image">
-    <img [src]="article.imageUrl" alt="article" />
+<div class="article-wrapper">
+        <div class="article-image">
+                <img [src]="article.imageUrl" alt="article" />
+        </div>
+        <h1>{{article.title}}</h1>
+        <div [innerHtml]="article.content"></div>
 </div>
-<h1>{{article.title}}</h1>
-<div [innerHtml]="article.content"></div>
