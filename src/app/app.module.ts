@@ -16,6 +16,7 @@ import { AuthService } from "./services/auth.service";
 import { CalendarModule } from "./calendar/calendar.module";
 import { ArticleModule, IArticleService } from "./article/article.module";
 import { ArticleService } from "./services/article.service";
+import { ArticleComponent } from './meditate/article/article.component';
 
 @NgModule({
 	declarations: [
@@ -23,7 +24,8 @@ import { ArticleService } from "./services/article.service";
 		MeditateComponent,
 		ExercisesComponent,
 		MainComponent,
-		WelcomeComponent
+		WelcomeComponent,
+		ArticleComponent
 	],
 	imports: [
 		BrowserModule,

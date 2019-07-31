@@ -8,5 +8,10 @@ import { IArticle } from "app/models/article.model";
 })
 export class ArticlePaginateItemComponent {
 	@Input() private readonly article: IArticle;
+	@Input() private readonly handleClick: Function;
 	constructor() {}
+
+	onClick = () => {
+		this.handleClick(this.article.id);
+	};
 }

@@ -8,5 +8,11 @@ import { IArticle } from "app/models/article.model";
 })
 export class FeatureArticleComponent {
 	@Input() article: IArticle;
+	@Input() handleClick: Function;
+
 	constructor() {}
+
+	onArticleClick = () => {
+		this.handleClick(this.article.id);
+	};
 }

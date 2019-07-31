@@ -145,7 +145,7 @@ export class ArticleService implements IArticleService {
 	};
 
 	public getArticle = (id: number) => {
-		return articles.find((x) => x.id === id);
+		return articles.find((x) => x && x.id === id);
 	};
 
 	public getFeatured = () => {

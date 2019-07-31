@@ -8,5 +8,6 @@ import { IArticle } from "app/models/article.model";
 })
 export class ArticleListComponent {
 	@Input() private readonly articles: IArticle[];
+	@Input() private readonly handleClick: Function;
 	constructor() {}
 }
