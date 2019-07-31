@@ -2,7 +2,7 @@
     <div class="container">
         <img [src]="article.imageUrl">
         <h1>{{article.title}}</h1>
-        <div [innerHtml]="article.content">
+        <div [innerHtml]="article.content | trimText:300">
 
         </div>
         <button class="strong">Read more...</button>

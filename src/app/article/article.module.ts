@@ -5,6 +5,7 @@ import { ArticlePaginateComponent } from "./article-paginate/article-paginate.co
 import { ArticlePaginateItemComponent } from "./article-paginate/article-paginate-item.component";
 import { ArticleListComponent } from "./article-paginate/article-list.component";
 import { FeatureArticleComponent } from "./article-paginate/feature-article.component";
+import { TrimTextPipe } from "./pipes/trim-text.pipe";
 
 export interface IArticleService {
 	getArticles();
@@ -13,8 +14,9 @@ export interface IArticleService {
 
 @NgModule({
 	imports: [ CommonModule ],
-	providers: [],
+	providers: [ TrimTextPipe ],
 	declarations: [
+		TrimTextPipe,
 		ArticleComponent,
 		ArticlePaginateComponent,
 		ArticlePaginateItemComponent,
