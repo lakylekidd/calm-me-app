@@ -1,6 +1,6 @@
 <div class="feature-article-wrapper">
     <div class="container">
-        <img [src]="article.imageUrl">
+        <img [src]="article.imageUrl" alt="article">
         <h1>{{article.title}}</h1>
         <div [innerHtml]="article.content | trimText:300">
 

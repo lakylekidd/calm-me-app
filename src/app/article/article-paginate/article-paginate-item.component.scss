@@ -9,7 +9,9 @@ div.article-paginate-item-wrapper {
 	transition: 0.1s linear;
 
 	div.img-wrapper {
+		object-fit: contain;
 		img {
+			width: 200px;
 			height: 136px;
 			border-radius: 10px 0 0 10px;
 		}
@@ -41,10 +43,10 @@ div.article-paginate-item-wrapper {
 		div.img-wrapper {
 			padding: 0;
 			width: 100%;
+			object-fit: cover;
 			img {
-				object-fit: contain;
 				width: 100%;
-				height: auto;
+				height: 100%;
 				border-radius: 0;
 			}
 		}

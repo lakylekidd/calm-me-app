@@ -1,11 +1,11 @@
 <div class="article-paginate-item-wrapper">
     <div class="img-wrapper">
-        <img src="https://cdn.pixabay.com/photo/2018/10/30/16/06/water-lily-3784022__340.jpg" alt="flower">
+        <img [src]="article.imageUrl" alt="article">
     </div>
     <div class="article-wrapper">
-        <h1>Mindfulness meditation</h1>
-        <p>
-                Mindfulness is a form of meditation that urges practitioners to remain aware and present...
-        </p>
+        <h1>{{article.title}}</h1>
+        <div [innerHtml]="article.content | trimText:150">
+
+        </div>
     </div>
 </div>
