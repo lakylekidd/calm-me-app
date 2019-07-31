@@ -3,6 +3,8 @@ import { CommonModule } from "@angular/common";
 import { ArticleComponent } from "./article/article.component";
 import { ArticlePaginateComponent } from "./article-paginate/article-paginate.component";
 import { ArticlePaginateItemComponent } from "./article-paginate/article-paginate-item.component";
+import { ArticleListComponent } from "./article-paginate/article-list.component";
+import { FeatureArticleComponent } from "./article-paginate/feature-article.component";
 
 @NgModule({
 	imports: [ CommonModule ],
@@ -10,12 +12,15 @@ import { ArticlePaginateItemComponent } from "./article-paginate/article-paginat
 	declarations: [
 		ArticleComponent,
 		ArticlePaginateComponent,
-		ArticlePaginateItemComponent
+		ArticlePaginateItemComponent,
+		ArticleListComponent,
+		FeatureArticleComponent
 	],
 	exports: [
 		ArticleComponent,
 		ArticlePaginateComponent,
-		ArticlePaginateItemComponent
+		ArticlePaginateItemComponent,
+		ArticleListComponent
 	]
 })
 export class ArticleModule {}

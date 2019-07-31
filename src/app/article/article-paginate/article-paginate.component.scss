@@ -1,0 +1,14 @@
+div.article-paginate-wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 500px;
+	border-radius: 10px;
+	border: 1px #433191 solid;
+
+	@media (max-width: 1200px) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}

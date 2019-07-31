@@ -1,0 +1,35 @@
+div.article-paginate-item-wrapper {
+	display: flex;
+	background-color: #a596e4;
+	color: #433191;
+	height: 136px;
+	margin: 20px 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.1s linear;
+	div.img-wrapper {
+		img {
+			height: 136px;
+			border-radius: 10px 0 0 10px;
+		}
+	}
+	div.article-wrapper {
+		padding: 5px;
+		box-sizing: border-box;
+		h1 {
+			font-size: 22px;
+		}
+		p {
+			font-size: 17px;
+		}
+	}
+
+	&:hover {
+		transform: scale(1.02);
+		box-shadow: 0px 0px 10px black;
+	}
+	&:active {
+		transition: 0.02s linear;
+		transform: scale(1);
+	}
+}
