@@ -14,6 +14,7 @@ import { MainComponent } from "./main/main.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { AuthService } from "./services/auth.service";
 import { CalendarModule } from "./calendar/calendar.module";
+import { ArticleModule } from "./article/article.module";
 
 @NgModule({
 	declarations: [
@@ -31,7 +32,8 @@ import { CalendarModule } from "./calendar/calendar.module";
 		LayoutModule,
 		BreateModule,
 		TipsModule,
-		CalendarModule
+		CalendarModule,
+		ArticleModule
 	],
 	providers: [ AuthService ],
 	bootstrap: [ AppComponent ]
