@@ -4,6 +4,7 @@ div.logo {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	cursor: pointer;
 	&.dark {
 		background-image: url(/assets/images/logo.png);
 	}
