@@ -22,8 +22,8 @@
           <li class="button" *ngIf="!authenticated">
             <button (click)="handleLoginClick()">Login</button>
           </li>
-          <li class="user-info" [ngClass]="{ 'open': displayUserMenu }" *ngIf="authenticated" (click)="displayUserMenu = !displayUserMenu">
-            <a>Hello, {{userData?.first_name}}</a>
+          <li class="user-info" [ngClass]="{ 'open': displayUserMenu }" *ngIf="authenticated">
+            <a id="user-data-toggler" (click)="toggleUserMenu($event)">Hello, {{userData?.first_name}}</a>
             <ul class="submenu">
               <li>
                 <a routerLink="/calendar" routerLinkActive="active">My Calendar</a>
