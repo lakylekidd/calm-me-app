@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "app/services/auth.service";
+import { JwtPayload } from "app/auth/helpers/jwt";
 
 @Component({
 	selector: "app-nav",
@@ -10,6 +11,8 @@ import { AuthService } from "app/services/auth.service";
 export class NavComponent implements OnInit {
 	overlay: boolean = false;
 	authenticated: boolean = false;
+	displayUserMenu: boolean = true;
+	userData: JwtPayload;
 
 	constructor(
 		private readonly authService: AuthService,
@@ -31,6 +34,7 @@ export class NavComponent implements OnInit {
 	ngOnInit() {
 		this.authService.currentUser.subscribe((v) => {
 			this.authenticated = v !== null;
+			this.userData = v;
 		});
 	}
 }

@@ -22,6 +22,17 @@
           <li class="button" *ngIf="!authenticated">
             <button (click)="handleLoginClick()">Login</button>
           </li>
+          <li class="user-info" [ngClass]="{ 'open': displayUserMenu }" *ngIf="authenticated" (click)="displayUserMenu = !displayUserMenu">
+            <a>Hello, {{userData?.first_name}}</a>
+            <ul class="submenu">
+              <li>
+                <a routerLink="/main/tips" routerLinkActive="active">Mindfulness Tips</a>
+              </li>
+              <li>
+                <a routerLink="/main/tips" routerLinkActive="active">Logout</a>
+              </li>
+            </ul>
+          </li>
         </ul>
     </div>
     <div id="hamburger" class="hamburger" (click)="toggleOverlay()" [ngClass]="{ 'open': overlay }">

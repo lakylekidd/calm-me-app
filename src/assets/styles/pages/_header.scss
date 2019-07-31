@@ -126,6 +126,7 @@ div.header-container {
 						height: 100%;
 						justify-content: center;
 						align-items: center;
+						cursor: pointer;
 					}
 					a:before {
 						content: "";
@@ -146,6 +147,54 @@ div.header-container {
 					a:active:before {
 						visibility: visible;
 						transform: scaleX(1.2);
+					}
+
+					&.user-info {
+						//padding: 0 8px;
+						transition: 0.2s linear;
+						&.open {
+							padding: 8px 8px;
+							box-sizing: border-box;
+							display: flex;
+							justify-content: flex-start;
+							flex-direction: column;
+							border: 1px solid white;
+							border-radius: 10px;
+							color: white;
+							height: 100px;
+							background-color: $light-color;
+							> a {
+								display: none;
+								height: 50px;
+							}
+							ul {
+								opacity: 1;
+								margin: 0;
+								padding: 0;
+								width: auto;
+								display: flex;
+								flex-direction: column;
+								justify-content: flex-start;
+								> li {
+									height: auto;
+									a {
+										height: 40px;
+									}
+									a:before {
+										background-color: $main-color;
+									}
+								}
+							}
+						}
+						a {
+							display: flex;
+							height: 100%;
+							justify-content: center;
+						}
+						ul {
+							opacity: 0;
+							width: 0;
+						}
 					}
 				}
 			}
@@ -182,10 +231,11 @@ div.header-container {
 							0,
 							0.616
 						); /* Black background with opacity */
-						z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-						cursor: pointer; /* Add a pointer on hover */
+						z-index: 2;
+						/* Specify a stack order in case you're using a different order for other elements */
+						cursor: pointer;
+						/* Add a pointer on hover */
 					}
-
 					ul {
 						opacity: 1;
 						height: auto;
@@ -195,7 +245,6 @@ div.header-container {
 						flex-direction: column;
 						align-items: center;
 						justify-content: flex-start;
-
 						li {
 							height: 40px;
 							margin: 20px 0;
