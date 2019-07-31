@@ -6,6 +6,11 @@ import { ArticlePaginateItemComponent } from "./article-paginate/article-paginat
 import { ArticleListComponent } from "./article-paginate/article-list.component";
 import { FeatureArticleComponent } from "./article-paginate/feature-article.component";
 
+export interface IArticleService {
+	getArticles();
+	getFeatured();
+}
+
 @NgModule({
 	imports: [ CommonModule ],
 	providers: [],

@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { IArticle } from "app/models/article.model";
 
 @Component({
 	selector: "app-feature-article",
@@ -6,5 +7,6 @@ import { Component } from "@angular/core";
 	styleUrls: [ "./feature-article.component.scss" ]
 })
 export class FeatureArticleComponent {
+	@Input() article: IArticle;
 	constructor() {}
 }

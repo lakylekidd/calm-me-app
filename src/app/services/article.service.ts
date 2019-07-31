@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { IArticle } from "app/models/article.model";
+import { IArticleService } from "app/article/article.module";
 
 const articles: IArticle[] = [
 	{
@@ -136,7 +137,7 @@ const articles: IArticle[] = [
 @Injectable({
 	providedIn: "root"
 })
-export class ArticleService {
+export class ArticleService implements IArticleService {
 	constructor() {}
 
 	public getArticles = () => {
@@ -148,6 +149,6 @@ export class ArticleService {
 	};
 
 	public getFeatured = () => {
-		return articles.find((x) => x.featured);
+		return articles.find((x) => x && x.featured);
 	};
 }

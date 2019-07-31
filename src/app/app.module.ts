@@ -14,7 +14,7 @@ import { MainComponent } from "./main/main.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { AuthService } from "./services/auth.service";
 import { CalendarModule } from "./calendar/calendar.module";
-import { ArticleModule } from "./article/article.module";
+import { ArticleModule, IArticleService } from "./article/article.module";
 import { ArticleService } from "./services/article.service";
 
 @NgModule({
@@ -36,7 +36,11 @@ import { ArticleService } from "./services/article.service";
 		CalendarModule,
 		ArticleModule
 	],
-	providers: [ AuthService, ArticleService ],
+	providers: [
+		AuthService,
+		ArticleService,
+		{ provide: "IArticleService", useClass: ArticleService }
+	],
 	bootstrap: [ AppComponent ]
 })
 export class AppModule {}

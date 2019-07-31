@@ -11,9 +11,15 @@ div.feature-article-wrapper {
 		h1 {
 			font-size: 22px;
 		}
-		p {
-			font-size: 17px;
+		div {
+			p {
+				font-size: 17px;
+			}
+			p > a {
+				color: #433191 !important;
+			}
 		}
+
 		button {
 			z-index: 2000;
 			width: 100%;

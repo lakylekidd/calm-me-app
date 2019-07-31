@@ -1,11 +1,10 @@
 <div class="feature-article-wrapper">
     <div class="container">
-        <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="nature">
-        <h1>Body scan or progressive relaxation</h1>
-        <p>
-                Progressive relaxation, sometimes called body scan meditation, is meditation that encourages people to scan their bodies 
-                for areas of tension. The goal is to notice tension and to allow it to release...
-        </p>
+        <img [src]="article.imageUrl">
+        <h1>{{article.title}}</h1>
+        <div [innerHtml]="article.content">
+
+        </div>
         <button class="strong">Read more...</button>
     </div>
 </div>
