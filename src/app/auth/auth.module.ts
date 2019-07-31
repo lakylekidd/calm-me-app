@@ -7,6 +7,7 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { RouterModule } from "@angular/router";
 import { LayoutModule } from "app/layout/layout.module";
+import { LogoutComponent } from "./logout/logout.component";
 
 @NgModule({
 	imports: [
@@ -20,13 +21,19 @@ import { LayoutModule } from "app/layout/layout.module";
 				children: [
 					{ path: "login", component: LoginComponent },
 					{ path: "register", component: RegisterComponent },
+					{ path: "logout", component: LogoutComponent },
 					{ path: "", redirectTo: "login", pathMatch: "full" },
 					{ path: "**", redirectTo: "login", pathMatch: "full" }
 				]
 			}
 		])
 	],
-	declarations: [ AuthComponent, LoginComponent, RegisterComponent ],
+	declarations: [
+		AuthComponent,
+		LoginComponent,
+		RegisterComponent,
+		LogoutComponent
+	],
 	exports: [ AuthComponent, LoginComponent, RegisterComponent ]
 })
 export class AuthModule {}

@@ -11,7 +11,7 @@ import { JwtPayload } from "app/auth/helpers/jwt";
 export class NavComponent implements OnInit {
 	overlay: boolean = false;
 	authenticated: boolean = false;
-	displayUserMenu: boolean = true;
+	displayUserMenu: boolean = false;
 	userData: JwtPayload;
 
 	constructor(
