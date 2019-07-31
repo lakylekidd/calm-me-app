@@ -7,6 +7,7 @@ div.article-paginate-item-wrapper {
 	border-radius: 10px;
 	cursor: pointer;
 	transition: 0.1s linear;
+
 	div.img-wrapper {
 		img {
 			height: 136px;
@@ -31,5 +32,21 @@ div.article-paginate-item-wrapper {
 	&:active {
 		transition: 0.02s linear;
 		transform: scale(1);
+	}
+
+	@media (max-width: 600px) {
+		padding: 0;
+		height: auto;
+		flex-direction: column;
+		div.img-wrapper {
+			padding: 0;
+			width: 100%;
+			img {
+				object-fit: contain;
+				width: 100%;
+				height: auto;
+				border-radius: 0;
+			}
+		}
 	}
 }
