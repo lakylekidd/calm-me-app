@@ -15,6 +15,7 @@ import { WelcomeComponent } from "./welcome/welcome.component";
 import { AuthService } from "./services/auth.service";
 import { CalendarModule } from "./calendar/calendar.module";
 import { ArticleModule } from "./article/article.module";
+import { ArticleService } from "./services/article.service";
 
 @NgModule({
 	declarations: [
@@ -35,7 +36,7 @@ import { ArticleModule } from "./article/article.module";
 		CalendarModule,
 		ArticleModule
 	],
-	providers: [ AuthService ],
+	providers: [ AuthService, ArticleService ],
 	bootstrap: [ AppComponent ]
 })
 export class AppModule {}
