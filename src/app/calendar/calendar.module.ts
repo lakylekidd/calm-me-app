@@ -1,9 +1,10 @@
-import { NgModule } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { CalendarComponent } from "./calendar.component";
 import { RouterModule } from "@angular/router";
 import { LayoutModule } from "app/layout/layout.module";
 import { MyCalendarComponent } from "./my-calendar/my-calendar.component";
+import { NO_ERRORS_SCHEMA } from "@angular/compiler/src/core";
 
 @NgModule({
 	imports: [
@@ -17,6 +18,7 @@ import { MyCalendarComponent } from "./my-calendar/my-calendar.component";
 			}
 		])
 	],
-	declarations: [ CalendarComponent, MyCalendarComponent ]
+	declarations: [ CalendarComponent, MyCalendarComponent ],
+	schemas: [ NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class CalendarModule {}

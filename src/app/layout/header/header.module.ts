@@ -5,6 +5,10 @@ import { LogoComponent } from "./logo/logo.component";
 import { NavComponent } from "./nav/nav.component";
 import { UserInfoComponent } from "./user-info/user-info.component";
 import { RouterModule } from "@angular/router";
+import {
+	CUSTOM_ELEMENTS_SCHEMA,
+	NO_ERRORS_SCHEMA
+} from "@angular/compiler/src/core";
 
 @NgModule({
 	imports: [ CommonModule, RouterModule ],
@@ -14,6 +18,7 @@ import { RouterModule } from "@angular/router";
 		NavComponent,
 		UserInfoComponent
 	],
-	exports: [ HeaderComponent, LogoComponent, NavComponent ]
+	exports: [ HeaderComponent, LogoComponent, NavComponent ],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })
 export class HeaderModule {}
