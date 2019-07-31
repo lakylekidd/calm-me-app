@@ -28,14 +28,7 @@ export class LoginComponent implements OnInit {
 	onSubmit = () => {
 		this.submitted = true;
 		this.authService.login(this.form).subscribe((res) => {
-			console.log("Log in called", res);
-			this.ngZone.run(() => this.router.navigateByUrl("/issues-list"));
+			this.ngZone.run(() => this.router.navigateByUrl("/main"));
 		});
-		// .then((success) => {
-		// 	if (success) {
-		// 		// Redirect to Main Page
-		// 		this.router.navigate([ "/main" ]);
-		// 	}
-		// });
 	};
 }

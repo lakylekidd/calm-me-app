@@ -29,7 +29,7 @@ export class BaseService {
 			// Get server-side error
 			errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
 		}
-		console.log(errorMessage);
+		console.log(error);
 		return throwError(errorMessage);
 	};
 }

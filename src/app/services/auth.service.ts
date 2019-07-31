@@ -3,7 +3,7 @@ import { BaseService } from "./base.service";
 import { IUser, ILoginModel, IRegisterModel } from "app/models/user.model";
 import { Observable, BehaviorSubject, throwError } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { retry, catchError } from "rxjs/operators";
+import { retry, catchError, map } from "rxjs/operators";
 import { decode, JwtPayload } from "app/auth/helpers/jwt";
 
 const USER_DATA_ID = "USER_DATA";
@@ -46,47 +46,40 @@ export class AuthService extends BaseService {
 
 	login = (loginData: ILoginModel) => {
 		return this.http
-			.post<Boolean>(
-				`${this.apiBaseUrl}/auth`,
-				loginData,
-				this.httpOptions
-			)
-			.pipe(retry(1), catchError(this.errorHandler));
-		// .toPromise()
-		// .then((res: Response) => {
-		// 	// Check if we got a response
-		// 	if (res.status === 200) {
-		// 		// Get the JWK
-		// 		const jwk = res.text();
-		// 		// Process it
-		// 		const result = decode(jwk);
-		// 		this.saveUserData(result);
-		// 		this.saveToLocal("TOKEN", jwk);
-		// 		this.currentUserSubject.next(result);
-		// 		return true;
-		// 	}
-		// 	return false;
-		// })
-		// .catch((err) => {
-		// 	console.log("Error: ", err);
-		// });
+			.post(`${this.apiBaseUrl}/auth`, JSON.stringify(loginData), {
+				...this.httpOptions,
+				responseType: "text"
+			})
+			.pipe(retry(1), catchError(this.errorHandler))
+			.pipe(
+				map((res) => {
+					// Check if we got a response
+					if (res) {
+						// Process it
+						const result = decode(res);
+						this.saveUserData(result);
+						this.saveToLocal("TOKEN", res);
+						this.currentUserSubject.next(result);
+						return true;
+					}
+					return false;
+				})
+			);
 	};
 
 	register = (registerData: IRegisterModel) => {
 		return this.http
 			.post(`${this.apiBaseUrl}/users`, registerData, this.httpOptions)
-			.pipe(retry(1), catchError(this.errorHandler));
-		// .toPromise()
-		// .then((res) => {
-		// 	// Check if we got a response
-		// 	if (res.status === 201) {
-		// 		return true;
-		// 	}
-		// 	return false;
-		// })
-		// .catch((err) => {
-		// 	console.log("Error: ", err);
-		// });
+			.pipe(retry(1), catchError(this.errorHandler))
+			.pipe(
+				map((res) => {
+					// Check if we got a response
+					if (res) {
+						return true;
+					}
+					return false;
+				})
+			);
 	};
 
 	logout() {

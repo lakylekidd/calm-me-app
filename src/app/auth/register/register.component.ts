@@ -34,14 +34,9 @@ export class RegisterComponent implements OnInit {
 	onSubmit = () => {
 		this.submitted = true;
 		this.authService.register(this.form).subscribe((res) => {
-			console.log("Log in called", res);
-			this.ngZone.run(() => this.router.navigateByUrl("/issues-list"));
+			this.ngZone.run(() =>
+				this.router.navigateByUrl("/auth/registration-confirmed")
+			);
 		});
-		// .then((success) => {
-		// 	if (success) {
-		// 		// Redirect to Main Page
-		// 		this.router.navigate([ "/auth/registration-confirmed" ]);
-		// 	}
-		// });
 	};
 }
