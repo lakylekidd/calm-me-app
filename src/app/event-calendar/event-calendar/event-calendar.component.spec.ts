@@ -29,9 +29,9 @@ describe("EventCalendarComponent", () => {
 		expect(component).toBeTruthy();
 	});
 
-	// it("should return a valid date based on provided month and year", () => {
-	// 	// Retrieve a date
-	// 	const date = (component as any).generateDateForMonth(2, 2019);
-	// 	expect(date).toEqual(jasmine.any(Date));
-	// });
+	it("should return a valid date based on provided month and year", () => {
+		// Retrieve a date
+		const date = (component as any).generateDateForMonth(2, 2019);
+		expect(date).toEqual(jasmine.any(Date));
+	});
 });

@@ -1,12 +1,12 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { By } from "@angular/platform-browser";
-import { DebugElement } from "@angular/core";
 
 import { MeditateComponent } from "./meditate.component";
 import { ArticleService } from "app/services/article.service";
-import { ArticlePaginateComponent } from "app/article/article-paginate/article-paginate.component";
-import { FeatureArticleComponent } from "app/article/article-paginate/feature-article.component";
+import { ArticleModule } from "app/article/article.module";
+import { provideMagicalMock, createMagicalMock } from "app/mocks/magical-mocks";
+import { RouterTestingModule } from "@angular/router/testing";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 
 describe("MeditateComponent", () => {
 	let component: MeditateComponent;
@@ -15,12 +15,9 @@ describe("MeditateComponent", () => {
 	beforeEach(
 		async(() => {
 			TestBed.configureTestingModule({
-				declarations: [
-					MeditateComponent,
-					ArticlePaginateComponent,
-					FeatureArticleComponent
-				],
-				providers: [ ArticleService ]
+				declarations: [ MeditateComponent ],
+				imports: [ ArticleModule, RouterTestingModule ],
+				schemas: [ NO_ERRORS_SCHEMA ]
 			}).compileComponents();
 		})
 	);

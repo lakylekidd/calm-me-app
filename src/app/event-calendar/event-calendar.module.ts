@@ -25,6 +25,5 @@ import { CAL_CONFIG } from "./models";
 	],
 	imports: [ CommonModule ],
 	providers: [ { provide: "IConfig", useExisting: CAL_CONFIG } ]
-	//schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })
 export class EventCalendarModule {}

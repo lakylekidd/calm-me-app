@@ -6,6 +6,7 @@ import { ArticleService } from "app/services/article.service";
 import { ActivatedRoute, ActivatedRouteSnapshot } from "@angular/router";
 import { ActivatedRouteStub } from "app/mocks/activated-route.mock";
 import { Observable } from "rxjs/Rx";
+import { provideMagicalMock } from "app/mocks/magical-mocks";
 
 describe("ArticleComponent", () => {
 	let component: ArticleComponent;
@@ -24,14 +25,12 @@ describe("ArticleComponent", () => {
 	);
 
 	beforeEach(() => {
+		let activatedRoute = TestBed.get(ActivatedRoute) as any;
+		activatedRoute.testQueryParamMap = { id: 1 };
+
 		fixture = TestBed.createComponent(ArticleComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
-
-		const activatedRoute = fixture.debugElement.injector.get(
-			ActivatedRoute as any
-		);
-		activatedRoute.testQueryParamMap = { id: 1 };
 	});
 
 	it("should create", () => {

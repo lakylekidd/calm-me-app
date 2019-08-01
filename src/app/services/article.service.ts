@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { IArticle } from "app/models/article.model";
 import { IArticleService } from "app/article/article.module";
+import { BaseService } from "./base.service";
 
 const articles: IArticle[] = [
 	{
@@ -137,8 +138,10 @@ const articles: IArticle[] = [
 @Injectable({
 	providedIn: "root"
 })
-export class ArticleService implements IArticleService {
-	constructor() {}
+export class ArticleService extends BaseService implements IArticleService {
+	constructor() {
+		super();
+	}
 
 	public getArticles = () => {
 		return articles.filter((x) => !x.featured);

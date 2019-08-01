@@ -1,9 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
-import {
-	NgModule,
-	NO_ERRORS_SCHEMA,
-	CUSTOM_ELEMENTS_SCHEMA
-} from "@angular/core";
+import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
@@ -45,7 +41,6 @@ import { ArticleComponent } from "./meditate/article/article.component";
 		ArticleService,
 		{ provide: "IArticleService", useClass: ArticleService }
 	],
-	bootstrap: [ AppComponent ],
-	schemas: [ NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA ]
+	bootstrap: [ AppComponent ]
 })
 export class AppModule {}
