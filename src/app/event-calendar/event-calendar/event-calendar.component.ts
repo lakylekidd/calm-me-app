@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from "@angular/core";
 import { IConfig } from "../models";
 
 @Component({
-	selector: "app-event-calendar",
+	selector: "event-cal",
 	templateUrl: "./event-calendar.component.html",
 	styleUrls: [ "./event-calendar.component.scss" ]
 })
