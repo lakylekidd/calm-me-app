@@ -20,8 +20,7 @@ export class RegisterComponent implements OnInit {
 
 	constructor(
 		private readonly authService: AuthService,
-		private readonly router: Router,
-		private ngZone: NgZone
+		private readonly router: Router
 	) {}
 
 	// Only for debugging. Will be removed from production
@@ -34,9 +33,7 @@ export class RegisterComponent implements OnInit {
 	onSubmit = () => {
 		this.submitted = true;
 		this.authService.register(this.form).subscribe((res) => {
-			this.ngZone.run(() =>
-				this.router.navigateByUrl("/auth/registration-confirmed")
-			);
+			this.router.navigateByUrl("/auth/registration-confirmed");
 		});
 	};
 }

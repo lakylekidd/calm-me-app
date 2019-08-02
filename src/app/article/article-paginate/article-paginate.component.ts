@@ -2,6 +2,7 @@ import { Component, Input, Inject, NgZone } from "@angular/core";
 import { IArticleService } from "../article.module";
 import { IArticle } from "app/models/article.model";
 import { Router } from "@angular/router";
+import { ArticleService } from "app/services/article.service";
 
 @Component({
 	selector: "app-article-paginate",
@@ -13,8 +14,7 @@ export class ArticlePaginateComponent {
 	private articles: IArticle[];
 
 	constructor(
-		@Inject("IArticleService")
-		private readonly articleService: IArticleService,
+		private readonly articleService: ArticleService,
 		private readonly ngZone: NgZone,
 		private readonly router: Router
 	) {
