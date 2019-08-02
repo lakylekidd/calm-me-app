@@ -58,13 +58,13 @@ export enum ScheduledEventTypes {
  * Enum that defines all the day of the week
  */
 export enum DayOfWeek {
-	MON,
-	TUE,
-	WED,
-	THU,
-	FRI,
-	SAT,
-	SUN
+	MON = 1,
+	TUE = 2,
+	WED = 3,
+	THU = 4,
+	FRI = 5,
+	SAT = 6,
+	SUN = 0
 }
 /**
  * Interface that describes the configuration of the module
@@ -78,3 +78,11 @@ export interface IConfig {
 export const CAL_CONFIG: IConfig = {
 	startingWeekDay: DayOfWeek.MON
 };
+/**
+ * Interface that describes a day of the month
+ * with date and DayOfWeek type
+ */
+export interface IDayOfMonth {
+	date: Date;
+	day: DayOfWeek;
+}
