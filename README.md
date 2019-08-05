@@ -1,4 +1,4 @@
-# Calm.me
+# Calm.me - WIP
 Calm.me is an app build specifically for a 2 day hackathon organized by [Codaisseur](https://github.com/codaisseur) as a contest.
 
 ## Table of Contents
