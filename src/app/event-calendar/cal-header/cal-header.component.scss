@@ -1,0 +1,36 @@
+div.cal-header-wrapper {
+	padding: 10px;
+	background-color: #1c3e69;
+	color: white;
+	height: 45px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	div.prev-btn-container {
+		text-align: left;
+	}
+	div.next-btn-container {
+		text-align: right;
+	}
+
+	div.prev-btn-container,
+	div.next-btn-container {
+		flex: 1;
+		button {
+			min-width: auto;
+			width: 45px;
+			padding: 0;
+		}
+	}
+	div.month-container {
+		flex: 8;
+		text-align: center;
+		h1 {
+			font-size: 30px;
+			margin: 0;
+			padding: 0;
+		}
+	}
+}

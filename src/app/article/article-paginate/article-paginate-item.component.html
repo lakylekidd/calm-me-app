@@ -1,0 +1,11 @@
+<div class="article-paginate-item-wrapper" (click)="onClick()">
+    <div class="img-wrapper">
+        <img [src]="article.imageUrl" alt="article">
+    </div>
+    <div class="article-wrapper">
+        <h1>{{article.title}}</h1>
+        <div [innerHtml]="article.content | trimText:150">
+
+        </div>
+    </div>
+</div>

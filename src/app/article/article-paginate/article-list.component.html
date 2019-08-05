@@ -1,0 +1,5 @@
+<div class="article-list-wrapper">
+    <ng-template ngFor let-item [ngForOf]="articles" let-i="index" [ngForTrackBy]="trackByFn">
+        <app-article-paginate-item [handleClick]="handleClick" [article]="item"></app-article-paginate-item>
+    </ng-template>    
+</div>

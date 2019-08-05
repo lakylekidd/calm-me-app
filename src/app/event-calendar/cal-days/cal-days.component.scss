@@ -1,0 +1,16 @@
+$color-a: #fae56b;
+$color-b: #ca2f6b;
+$color-c: #672964;
+$color-d: #17255d;
+$color-e: #60eab0;
+
+div.cal-days-wrapper {
+	min-height: 600px;
+	background: linear-gradient(
+		$color-a,
+		$color-b,
+		$color-c,
+		$color-d,
+		$color-e
+	);
+}

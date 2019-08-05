@@ -1,0 +1,46 @@
+div.feature-article-wrapper {
+	margin: 10px;
+	color: #433191;
+	width: 424px;
+	div.container {
+		box-sizing: border-box;
+		img {
+			width: 400px;
+			border-radius: 10px;
+		}
+		h1 {
+			font-size: 22px;
+		}
+		div {
+			p {
+				font-size: 17px;
+			}
+			p > a {
+				color: #433191 !important;
+			}
+		}
+
+		button {
+			z-index: 2000;
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 1200px) {
+		box-sizing: border-box;
+		margin: auto;
+		padding: 10px;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		div.container {
+			img {
+				width: 100%;
+				border-radius: 10px;
+			}
+			button {
+				width: auto;
+			}
+		}
+	}
+}
