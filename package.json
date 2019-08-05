@@ -3,6 +3,10 @@
 	"version": "0.0.0",
 	"license": "MIT",
 	"angular-cli": {},
+	"engines": {
+		"node": "10.16.0",
+		"npm": "6.9.0"
+	},
 	"scripts": {
 		"ng": "ng",
 		"start": "node server.js",
