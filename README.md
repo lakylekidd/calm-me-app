@@ -1,8 +1,9 @@
 # Calm.me
-This is a hackathon 2-day project for [Codaisseur](https://github.com/codaisseur)
+Calm.me is an app build specifically for a 2 day hackathon organized by [Codaisseur](https://github.com/codaisseur) as a contest.
 
 ## Table of Contents
 - [Project Description](##project-description)
+- [TODOS](##todos)
 - [Technologies used](##technologies-used)
 - [Demo](##demo)
 - [Development Server](##development-server)
@@ -12,13 +13,25 @@ This is a hackathon 2-day project for [Codaisseur](https://github.com/codaisseur
 
 
 ## Project Description
+Calm.me app is a resource that provides mindful exercises and techniques to calm a stressfull mind. There is also an app that allows the user to quickly relax via a popular breathing technique developed by Apple for the Apple Watch. I have replicated the app using SCSS and synchronized it using Typescript, instructing the user on when to breathe in and out.
 
-
+## TODOS
+- [ ] Create a calendar to store all the breathing exercises made by date and time, when the user is logged in
+- [ ] Create a form that allows the user to input all his meditation exercises and select an emoji based on the amount of relaxation he achieved
+ 
 ## Technologies Used
+For this project, I have used the following modern technologies:
+- Angular 8
+- RXJS
+- SCSS
+- TypeScript
+- Karma / Jasmine
+- Protractor
 
+This web app depends on a back-end REST API made in entirely in JAVA. You can view [this GitHub project here](https://github.com/lakylekidd/calm-me-api).
 
 ## Demo
-
+You can view a demo of this application on heroku [here](https://calm-me.herokuapp.com/).
 
 
 ## Development Server
